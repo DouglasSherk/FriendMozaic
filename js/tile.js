@@ -96,6 +96,9 @@
                     var lowestDistanceUid = "";
                     for (var uid in uids) {
                         var friendData = imgData[uids[uid]];
+                        if (imgData == null) {
+                            continue;
+                        }
                         var distance = Math.abs(friendData[0] - avR) + Math.abs(friendData[1] - avG) + Math.abs(friendData[2] - avB);
 
                         if (distance < lowestDistance) {

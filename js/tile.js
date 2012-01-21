@@ -115,6 +115,9 @@
                         writeY++;
                     }
                 }
+
+                $("#loading").css("display", "none");
+                $("#save").css("display", "display");
             }
         //};
     }
@@ -133,6 +136,8 @@
     });*/
 
     function updatePicture() {
+        $("#loading").css("display", "block");
+        $("#save").css("display", "none");
 
         FB.api('/me/albums', function(response) { 
             for (album in response.data) {

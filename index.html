@@ -7,8 +7,6 @@
         
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
         <script type="text/javascript" src="fbMultiSelector/jquery.facebook.multifriend.select.js"></script>
-        <script type="text/javascript" src="js/tile.js"></script>
-        
     </head>
     
     <body>
@@ -40,15 +38,15 @@
                     } else {
                         alert('Login Failed!');
                     }
-                });
+                }, {scope: 'user_photos'});
             }
-         
-            function init() {
+            
+          function init() {
               FB.api('/me', function(response) {
                   $("#username").html("<img src='https://graph.facebook.com/" + response.id + "/picture'/><div>" + response.name + "</div>");
                 
                   $("#jfmfs-container").jfmfs({ 
-                      max_selected:99, 
+                      max_selected: 99, 
                       max_selected_message: "{0} of {1} selected",
                       friend_fields: "id,name,last_name",
                       sorter: function(a, b) {
@@ -94,6 +92,7 @@
     </body>
     <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
     <script type="text/javascript" src="js/jquery.ennui.contentslider.js"></script>
+    <script type="text/javascript" src="js/tile.js"></script>
     <script type="text/javascript">
             $(function() {
                 $('#slider').ContentSlider({

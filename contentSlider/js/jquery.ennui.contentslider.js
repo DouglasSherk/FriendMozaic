@@ -39,9 +39,11 @@
         if(b.attr('class')=='cs_leftBtn') {
           var thisBtn = $('#'+thisInstance+' .cs_leftBtn');
           var otherBtn = $('#'+thisInstance+' .cs_rightBtn');
+          
         } else {
           var thisBtn = $('#'+thisInstance+' .cs_rightBtn');
           var otherBtn = $('#'+thisInstance+' .cs_leftBtn');
+      
         }
         if(m==0||m==x) {
           thisBtn.animate({ 'opacity':'0' }, o.speed, o.easing, function() { thisBtn.hide(); });
@@ -87,8 +89,9 @@
           .end()
         .find('.cs_rightBtn')
           .hide()
-          .animate({ 'width':'show' });
-
+          .animate({ 'width':'show' })
+          .parent.click(function() { alert('hi')});
+     
       // Resize the font to match the bounding box
       if(o.textResize===true) {
         var h2FontSize = $(this).find('h2').css('font-size');
@@ -120,7 +123,6 @@
         if(inuse===false) {
           inuse=true;
           moveSlider('left', rightBtn);
-          updatePicture();
         }
         return false; // Keep the link from firing
       });

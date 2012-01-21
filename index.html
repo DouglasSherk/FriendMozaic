@@ -50,6 +50,8 @@
                   $("#username").html("<img src='https://graph.facebook.com/" + response.id + "/picture'/><div>" + response.name + "</div>");
                 
                   $("#jfmfs-container").jfmfs({ 
+                      max_selected: 99, 
+                      max_selected:500, 
                       max_selected:500, 
                       max_selected_message: "{0} of {1} selected",
                       friend_fields: "id,name,last_name",
@@ -87,7 +89,7 @@
                     </div>
                     <div class="cs_article center">
                         <h2><a href="#">Photo Collage</a></h2>
-                        <canvas id="newPicture" width="1000px" height="1000px" style="margin: auto; display: block;"></canvas>
+                        <canvas id="newPicture" height="1000px" width="1000px"></canvas>
                     </div>
                 </div>
             </div>

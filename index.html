@@ -66,11 +66,12 @@
                 var friendURL = new Array();   
  
                 $("#show-friends").live("click", function() {
-                    var friendSelector = $("#jfmfs-container").data('jfmfs');             
+                    var friendIds = new Array();
 
+                    var friendSelector = $("#jfmfs-container").data('jfmfs');             
                     var friendIds = friendSelector.getSelectedIds();
 
-                    for (var i = 0; i < friendIds.size(); i++){
+                    for (var i = 0; i < friendIds.length; i++){
                         friendURL[i] = "https://graph.facebook.com/" + friendIds[i] + "/picture";
                     } 
 

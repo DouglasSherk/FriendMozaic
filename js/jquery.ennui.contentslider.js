@@ -1,4 +1,5 @@
 (function($) {
+  
   $.fn.ContentSlider = function(options)
   {
     var defaults = {
@@ -19,6 +20,7 @@
     var x = -1*w*n+w; // Minimum left value
     var p = parseInt(o.width)/parseInt(defaultWidth);
     var thisInstance = this.attr('id');
+    
     var inuse = false; // Prevents colliding animations
 
     function moveSlider(d, b)
@@ -39,9 +41,11 @@
         if(b.attr('class')=='cs_leftBtn') {
           var thisBtn = $('#'+thisInstance+' .cs_leftBtn');
           var otherBtn = $('#'+thisInstance+' .cs_rightBtn');
+          
         } else {
           var thisBtn = $('#'+thisInstance+' .cs_rightBtn');
           var otherBtn = $('#'+thisInstance+' .cs_leftBtn');
+      
         }
         if(m==0||m==x) {
           thisBtn.animate({ 'opacity':'0' }, o.speed, o.easing, function() { thisBtn.hide(); });
@@ -70,8 +74,8 @@
           height:o.height
         })
         // Add the buttons to move left and right
-        .prepend('<a href="#" class="cs_leftBtn"><img src="'+o.leftBtn+'" /></a>')
-        .append('<a href="#" class="cs_rightBtn"><img src="'+o.rightBtn+'" /></a>')
+        .prepend('<a id="leftBtn" href="#" class="cs_leftBtn"><img src="'+o.leftBtn+'" /></a>')
+        .append('<a id="rightBtn" href="#" class="cs_rightBtn"><img src="'+o.rightBtn+'" /></a>')
         // Dig down to the article div elements
         .find('.cs_article')
           // Set the width and height of the div to the defined size
@@ -88,7 +92,7 @@
         .find('.cs_rightBtn')
           .hide()
           .animate({ 'width':'show' });
-
+     
       // Resize the font to match the bounding box
       if(o.textResize===true) {
         var h2FontSize = $(this).find('h2').css('font-size');
@@ -110,6 +114,7 @@
         if(inuse===false) {
           inuse = true;
           moveSlider('right', leftBtn);
+          
         }
         return false; // Keep the link from firing
       });
@@ -120,6 +125,7 @@
         if(inuse===false) {
           inuse=true;
           moveSlider('left', rightBtn);
+          
         }
         return false; // Keep the link from firing
       });

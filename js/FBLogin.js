@@ -71,7 +71,7 @@
 
         friendIds = friendSelector.getSelectedIds();
 
-        window.console && console.log("in showfriends!2"); 
+        window.console && console.log("in showfriends!"); 
 
         for (var i = 0; i < friendIds.length; i++){
             friendURL[i] = "https://graph.facebook.com/" + friendIds[i] + "/picture";

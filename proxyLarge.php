@@ -1,8 +1,4 @@
 <?php
-$uid = $_GET['uid'];
+$url = urldecode($_GET['url']);
 header('Content-Type: image/jpeg');
-echo(file_get_contents(
-    "https://graph.facebook.com/" .
-    $uid .
-    "/picture?type=large"
-));
+echo(file_get_contents($url));

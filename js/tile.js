@@ -77,7 +77,10 @@
             $("#newPicture").height(height);
             $("#newPicture").width(width);
             var tempContext = tempCanvas.getContext("2d");
-            tempContext.drawImage(profilePic, 0, 0, width, height);
+
+            // Draw the person's profile picture for now, then replace it
+            // gradually with friend pictures.
+            context.drawImage(profilePic, 0, 0, width, height);
 
             var pixels = tempContext.getImageData(0, 0, width, height);
             for (var boxY = 0; boxY < height / tileY; boxY++) {

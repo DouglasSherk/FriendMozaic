@@ -28,74 +28,75 @@
            }(document));
            
         </script>
-           
-        <script type="text/javascript">
-            function tmp(){
-            FB.init({appId: '158930817550508'});
-            
-            window.login = function () {
-                FB.login(function(response) {
-                    if (response.authResponse) {
-                        $('#loginBtn').fadeOut('slow');
-                        $('#slider').toggle(); //turning it
-                        init();
-                    } else {
-                        alert('Login Failed!');
-                    }
-                }, {scope: 'user_photos'});
-            }
-            
-          function init() {
-              FB.api('/me', function(response) {
-                  $("#username").html("<img src='https://graph.facebook.com/" + response.id + "/picture'/><div>" + response.name + "</div>");
+        <div style="left: 100px;">
+            <script type="text/javascript">
+                function tmp(){
+                FB.init({appId: '158930817550508'});
                 
-                  $("#jfmfs-container").jfmfs({ 
-                      max_selected: 99, 
-                      max_selected:500, 
-                      max_selected:500, 
-                      max_selected_message: "{0} of {1} selected",
-                      friend_fields: "id,name,last_name",
-                      sorter: function(a, b) {
-                        var x = a.last_name.toLowerCase();
-                        var y = b.last_name.toLowerCase();
-                        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
-                      }
-                  });
-                  $("#jfmfs-container").bind("jfmfs.friendload.finished", function() { 
-                      window.console && console.log("finished loading!"); 
-                  });
-                  $("#jfmfs-container").bind("jfmfs.selection.changed", function(e, data) { 
-                      window.console && console.log("changed", data);
-                  });                     
-                  
-                  $("#logged-out-status").hide();
-                  $("#show-friends").show();
+                window.login = function () {
+                    FB.login(function(response) {
+                        if (response.authResponse) {
+                            $('#loginBtn').fadeOut('slow');
+                            $('#slider').toggle(); //turning it
+                            init();
+                        } else {
+                            alert('Login Failed!');
+                        }
+                    }, {scope: 'user_photos'});
+                }
+                
+              function init() {
+                  FB.api('/me', function(response) {
+                      $("#username").html("<img src='https://graph.facebook.com/" + response.id + "/picture'/><div>" + response.name + "</div>");
+                    
+                      $("#jfmfs-container").jfmfs({ 
+                          max_selected: 99, 
+                          max_selected:500, 
+                          max_selected:500, 
+                          max_selected_message: "{0} of {1} selected",
+                          friend_fields: "id,name,last_name",
+                          sorter: function(a, b) {
+                            var x = a.last_name.toLowerCase();
+                            var y = b.last_name.toLowerCase();
+                            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+                          }
+                      });
+                      $("#jfmfs-container").bind("jfmfs.friendload.finished", function() { 
+                          window.console && console.log("finished loading!"); 
+                      });
+                      $("#jfmfs-container").bind("jfmfs.selection.changed", function(e, data) { 
+                          window.console && console.log("changed", data);
+                      });                     
+                      
+                      $("#logged-out-status").hide();
+                      $("#show-friends").show();
 
-              });
-            }}
-        </script>
-        
-        <div class="center">
-            <h1 class="logo">Friend Mosaic</h1>
-            <button id="loginBtn" onclick="login()">Login with Facebook</button>
-        </div>
-        
-        <div id="slider" class="contentslider">
-            <div class="cs_wrapper">
-                <div class="cs_slider">
-                    <div class="cs_article center">
-                        <h2><a href="#">Select Your Friends</a></h2>
-                        <div id="jfmfs-container" class="friendCanvas"></div>
-                    </div>
-                    <div class="cs_article center">
-                        <h2><a href="#">Photo Collage</a></h2>
-                        <div id="loading" style="display: none; margin: 50px;">
-                            <img src="images/loading.gif" /> Loading...
+                  });
+                }}
+            </script>
+            
+            <div class="center">
+                <h1 class="logo">Friend Mosaic</h1>
+                <button id="loginBtn" onclick="login()">Login with Facebook</button>
+            </div>
+            
+            <div id="slider" class="contentslider">
+                <div class="cs_wrapper">
+                    <div class="cs_slider">
+                        <div class="cs_article center">
+                            <h2><a href="#">Select Your Friends</a></h2>
+                            <div id="jfmfs-container" class="friendCanvas"></div>
                         </div>
-                        <div id="save" style="display: none; margin: 10px; text-align: center;">
-                            <a href="#" id="saveLink">Click Here to Save</a>
+                        <div class="cs_article center">
+                            <h2><a href="#">Photo Collage</a></h2>
+                            <div id="loading" style="display: none; margin: 50px;">
+                                <img src="images/loading.gif" /> Loading...
+                            </div>
+                            <div id="save" style="display: none; margin: 10px; text-align: center;">
+                                <a href="#" id="saveLink">Click Here to Save</a>
+                            </div>
+                            <canvas id="newPicture" height="1000px" width="1000px" style="margin-left: 100px; display: block;"></canvas>
                         </div>
-                        <canvas id="newPicture" height="1000px" width="1000px" style="margin-left: 100px; display: block;"></canvas>
                     </div>
                 </div>
             </div>

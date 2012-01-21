@@ -67,17 +67,18 @@
   margin:0;
   padding:0;
 }
+
 .cs_article {
-  float:left;
+  margin: auto;
   position:relative;
   top:0;
   left:0;
   display:block;
   width:900px;
   height:500px;
-  margin:0 auto;
   padding:0;
 }
+
 .cs_article h2 {
   display:block;
   width:26%;

@@ -36,7 +36,12 @@
             window.login = function () {
                 FB.login(function(response) {
                     if (response.authResponse) {
-                        init(); 
+                        
+                        $('#loginBtn').fadeOut('fast',function() {
+                            $('#slider').fadeIn('fast'); //turning it
+                            init(); 
+                        });
+                        
                     } else {
                         alert('Login Failed!');
                     }
@@ -75,7 +80,7 @@
         
         <div class="center">
             <h1 class="logo">Friend Mosaic</h1>
-            <button onclick="login()">Login with Facebook</button>
+            <button id="loginBtn" onclick="login()">Login with Facebook</button>
         </div>
         
         <div id="slider" class="contentslider">

@@ -71,7 +71,7 @@
                 width = profilePic.width - (profilePic.width % tileX);
             }
 
-            $(".contentslider").height(height + 50);
+            $(".contentslider").height(height + 150);
 
             tempCanvas.height = height;
             tempCanvas.width = width;
@@ -118,6 +118,11 @@
             }
         //};
     }
+
+    $("#saveLink").click(function() {
+        var canvas = document.getElementById("newPicture");
+        Canvas2Image.saveAsPNG(canvas);
+    });
 
     /*processFriends(function() {
         //tile("512769141");

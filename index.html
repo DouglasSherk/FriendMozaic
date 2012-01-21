@@ -36,12 +36,9 @@
             window.login = function () {
                 FB.login(function(response) {
                     if (response.authResponse) {
-                        
-                        $('#loginBtn').fadeOut('fast',function() {
-                            $('#slider').fadeIn('fast'); //turning it
-                            init(); 
-                        });
-                        
+                        $('#loginBtn').fadeOut('slow');
+                        $('#slider').toggle(); //turning it
+                        init();
                     } else {
                         alert('Login Failed!');
                     }

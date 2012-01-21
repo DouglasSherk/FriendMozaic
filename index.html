@@ -23,7 +23,7 @@
           (function(d){
              var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
              js = d.createElement('script'); js.id = id; js.async = true;
-             js.src = "http://connect.facebook.net/en_US/all.js";
+             js.src = "http://connect.facebook.net/en_US/all.js#xfbml=true";
              d.getElementsByTagName('head')[0].appendChild(js);
            }(document));
            
@@ -77,10 +77,10 @@
 
         <!-- like button -->
         <div id="fb-like" style="position: absolute; left: 25px; top: 25px;">
-            <div id="like-box"
+            <fb:like-box
                 href="http://www.facebook.com/apps/application.php?id=158930817550508"
                 width="250" show_faces="false" border_color="" stream="false"
-                header="false"></div>
+                header="false"></fb:like-box>
         </div>
 
         

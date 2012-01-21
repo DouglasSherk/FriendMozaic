@@ -1,6 +1,6 @@
 //$(document).ready(function() {
-    var tileX = 6;
-    var tileY = 6;
+    var tileX = 10;
+    var tileY = 10;
 
     //var uids = ["100003343000188", "510139148", "715822810", "504072909", "1649640112"];
     var uids;

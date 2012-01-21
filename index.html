@@ -7,15 +7,33 @@
         
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
         <script type="text/javascript" src="fbMultiSelector/jquery.facebook.multifriend.select.js"></script>
-        <script src="http://connect.facebook.net/en_US/all.js"></script>
+        
     </head>
     
     <body>
         <div id="fb-root"></div>
+        <script>
+          window.fbAsyncInit = function() {
+            
+            tmp();
+            // Additional initialization code here
+          };
+
+          // Load the SDK Asynchronously
+          (function(d){
+             var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+             js = d.createElement('script'); js.id = id; js.async = true;
+             js.src = "http://connect.facebook.net/en_US/all.js";
+             d.getElementsByTagName('head')[0].appendChild(js);
+           }(document));
+           
+        </script>
+           
         <script type="text/javascript">
+            function tmp(){
             FB.init({appId: '158930817550508'});
             
-            function login() {
+            window.login= function () {
                 FB.login(function(response) {
                     if (response.authResponse) {
                         init(); 
@@ -51,7 +69,7 @@
                   $("#show-friends").show();
 
               });
-            }
+            }}
         </script>
         
         

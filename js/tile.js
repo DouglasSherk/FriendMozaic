@@ -1,14 +1,15 @@
 //$(document).ready(function() {
-    var tileX = 10;
-    var tileY = 10;
+    var tileX = 6;
+    var tileY = 6;
 
     //var uids = ["100003343000188", "510139148", "715822810", "504072909", "1649640112"];
     var uids;
     var imgData = new Array();
     var originalData = new Array();
-    var context = document.getElementById("newPicture").getContext("2d");
 
     function processFriends(callback) {
+        var context = document.getElementById("newPicture").getContext("2d");
+
         var tempCanvas = document.createElement("canvas");
         var tempContext = tempCanvas.getContext("2d");
         var count = uids.length, num = 0;
@@ -47,6 +48,8 @@
     }
     
     function tile(profilePic) {
+        var context = document.getElementById("newPicture").getContext("2d");
+
         var image = new Image();
         image.src = "proxyLarge.php?uid=" + profilePic;
         // Where we're currently writing the thumb to.

@@ -114,6 +114,8 @@
                     }
                 }
             }
+
+            $("#slider").height = height;
         //};
     }
 

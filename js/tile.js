@@ -72,8 +72,8 @@
 
             $(".contentslider").height(height + 50);
 
-            $("#newPicture").height(height);
-            $("#newPicture").width(width);
+//            $("#newPicture").height(height);
+//            $("#newPicture").width(width);
 
             var tempContext = tempCanvas.getContext("2d");
             tempContext.drawImage(profilePic, 0, 0, width, height);

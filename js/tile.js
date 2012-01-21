@@ -50,31 +50,31 @@
     function tile(profilePic) {
         var context = document.getElementById("newPicture").getContext("2d");
 
-        var image = new Image();
-        image.src = "proxyLarge.php?uid=" + profilePic;
+        //var image = new Image();
+        //image.src = "proxyLarge.php?uid=" + profilePic;
         // Where we're currently writing the thumb to.
         var writeY = 0, writeX = 0;
-        image.onload = function() {
+        //image.onload = function() {
             var tempCanvas = document.createElement("canvas");
 
             var height;
-            if (image.height % tileY >= tileY / 2) {
-                height = image.height + tileY;
+            if (profilePic.height % tileY >= tileY / 2) {
+                height = profilePic.height + tileY;
             } else {
-                height = image.height - (image.height % tileY);
+                height = profilePic.height - (profilePic.height % tileY);
             }
 
             var width;
-            if (image.width % tileX >= tileX / 2) {
-                width = image.width - (image.width % tileX) + tileX;
+            if (profilePic.width % tileX >= tileX / 2) {
+                width = profilePic.width - (profilePic.width % tileX) + tileX;
             } else {
-                width = image.width - (image.width % tileX);
+                width = profilePic.width - (profilePic.width % tileX);
             }
 
             tempCanvas.height = height;
             tempCanvas.width = width;
             var tempContext = tempCanvas.getContext("2d");
-            tempContext.drawImage(image, 0, 0, width, height);
+            tempContext.drawImage(profilePic, 0, 0, width, height);
 
             var pixels = tempContext.getImageData(0, 0, width, height);
             for (var boxY = 0; boxY < height / tileY; boxY++) {
@@ -111,7 +111,7 @@
                     }
                 }
             }
-        };
+        //};
     }
 
     /*processFriends(function() {
@@ -136,7 +136,7 @@
                             uids = friendSelector.getSelectedIds();
                             if (uids.length > 0) {
                                 processFriends(function() {
-                                    tile("pltardif"); 
+                                    tile(profilePic); 
                                 });
                             }
                         }

@@ -18,7 +18,7 @@
             image.src = "proxySquare.php?uid=" + uids[uid];
             image.uid = uids[uid];
             function imageLoaded(currentNum) {
-                if (currentNum == count) {
+                if (currentNum == count || currentNum % 5 == 0) {
                     callback();
                 }
             }
@@ -50,31 +50,31 @@
     function tile(profilePic) {
         var context = document.getElementById("newPicture").getContext("2d");
 
-        var image = new Image();
-        image.src = "proxyLarge.php?uid=" + profilePic;
+        //var image = new Image();
+        //image.src = "proxyLarge.php?uid=" + profilePic;
         // Where we're currently writing the thumb to.
         var writeY = 0, writeX = 0;
-        image.onload = function() {
+        //image.onload = function() {
             var tempCanvas = document.createElement("canvas");
 
             var height;
-            if (image.height % tileY >= tileY / 2) {
-                height = image.height + tileY;
+            if (profilePic.height % tileY >= tileY / 2) {
+                height = profilePic.height + tileY;
             } else {
-                height = image.height - (image.height % tileY);
+                height = profilePic.height - (profilePic.height % tileY);
             }
 
             var width;
-            if (image.width % tileX >= tileX / 2) {
-                width = image.width - (image.width % tileX) + tileX;
+            if (profilePic.width % tileX >= tileX / 2) {
+                width = profilePic.width - (profilePic.width % tileX) + tileX;
             } else {
-                width = image.width - (image.width % tileX);
+                width = profilePic.width - (profilePic.width % tileX);
             }
 
             tempCanvas.height = height;
             tempCanvas.width = width;
             var tempContext = tempCanvas.getContext("2d");
-            tempContext.drawImage(image, 0, 0, width, height);
+            tempContext.drawImage(profilePic, 0, 0, width, height);
 
             var pixels = tempContext.getImageData(0, 0, width, height);
             for (var boxY = 0; boxY < height / tileY; boxY++) {
@@ -96,6 +96,9 @@
                     var lowestDistanceUid = "";
                     for (var uid in uids) {
                         var friendData = imgData[uids[uid]];
+                        if (imgData == null) {
+                            continue;
+                        }
                         var distance = Math.abs(friendData[0] - avR) + Math.abs(friendData[1] - avG) + Math.abs(friendData[2] - avB);
 
                         if (distance < lowestDistance) {
@@ -111,7 +114,7 @@
                     }
                 }
             }
-        };
+        //};
     }
 
     /*processFriends(function() {
@@ -130,13 +133,13 @@
                     FB.api(response.data[album].id + "/photos", function(response) {
                         var image = response.data[0].images[0].source;
                         var profilePic = new Image();
-                        image.src = "proxyLarge.php?url=" + escape(image);
-                        image.onload = function() {
+                        profilePic.src = "proxyLarge.php?url=" + escape(image);
+                        profilePic.onload = function() {
                             var friendSelector = $("#jfmfs-container").data("jfmfs");
                             uids = friendSelector.getSelectedIds();
                             if (uids.length > 0) {
                                 processFriends(function() {
-                                    tile("pltardif"); 
+                                    tile(profilePic); 
                                 });
                             }
                         }

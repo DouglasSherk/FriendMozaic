@@ -70,7 +70,7 @@
                 width = profilePic.width - (profilePic.width % tileX);
             }
 
-            $(".contentslider").height(height);
+            $(".contentslider").height(height + 50);
 
             $("#newPicture").height(height);
             $("#newPicture").width(width);

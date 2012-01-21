@@ -130,8 +130,8 @@
                     FB.api(response.data[album].id + "/photos", function(response) {
                         var image = response.data[0].images[0].source;
                         var profilePic = new Image();
-                        image.src = "proxyLarge.php?url=" + escape(image);
-                        image.onload = function() {
+                        profilePic.src = "proxyLarge.php?url=" + escape(image);
+                        profilePic.onload = function() {
                             var friendSelector = $("#jfmfs-container").data("jfmfs");
                             uids = friendSelector.getSelectedIds();
                             if (uids.length > 0) {

@@ -6,15 +6,33 @@
         <link href='http://fonts.googleapis.com/css?family=Port+Lligat+Sans' rel='stylesheet' type='text/css'>
         
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+        <script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
+        
         <script type="text/javascript" src="fbMultiSelector/jquery.facebook.multifriend.select.js"></script>
-        <script src="//connect.facebook.net/en_US/all.js"></script>
-        <script type="text/javascript" src="js/FBLogin.js">
     </head>
     
     <body>
+        <div id="fb-root"></div>
+        <script>
+           window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '158930817550508',
+            status     : true, 
+            cookie     : true,
+            xfbml      : true,
+            oauth      : true,
+          });
+        };
+        (function(d){
+           var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+           js = d.createElement('script'); js.id = id; js.async = true;
+           js.src = "//connect.facebook.net/en_US/all.js";
+           d.getElementsByTagName('head')[0].appendChild(js);
+         }(document));
+      </script>
         <div class="center">
             <h1 class="logo">Friend Mosaic</h1>
-            <button onclick="login">Log In</button>
+            <div class="fb-login-button">Login with Facebook</div>
         </div>
         
         <div id="slider" class="contentslider">
@@ -43,5 +61,4 @@
                 });
             });
     </script>
-       
 </html>

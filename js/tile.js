@@ -18,7 +18,7 @@
             image.src = "proxySquare.php?uid=" + uids[uid];
             image.uid = uids[uid];
             function imageLoaded(currentNum) {
-                if (currentNum == count) {
+                if (currentNum == count || currentNum % 5 == 0) {
                     callback();
                 }
             }

@@ -71,7 +71,7 @@
                 width = profilePic.width - (profilePic.width % tileX);
             }
 
-            $(".contentslider").height(height + 150);
+            $(".contentslider").height(height + 50);
 
             tempCanvas.height = height;
             tempCanvas.width = width;
@@ -116,9 +116,6 @@
                     }
                 }
             }
-
-            dataURL = context.toDataURL("image/png");
-            $("#savePicture").src = dataURL;
         //};
     }
 

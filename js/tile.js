@@ -48,6 +48,8 @@
     }
     
     function tile(profilePic) {
+        var context = document.getElementById("newPicture").getContext("2d");
+
         var image = new Image();
         image.src = "proxyLarge.php?uid=" + profilePic;
         // Where we're currently writing the thumb to.

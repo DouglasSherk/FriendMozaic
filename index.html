@@ -11,13 +11,14 @@
     
     <body>
         <div id="fb-root"></div>
+        
         <script type="text/javascript">
             FB.init({appId: '158930817550508'});
             
             function login() {
                 FB.login(function(response) {
                     if (response.authResponse) {
-                        init();
+                        init(); 
                     } else {
                         alert('Login Failed!');
                     }

@@ -53,6 +53,7 @@
         //var image = new Image();
         //image.src = "proxyLarge.php?uid=" + profilePic;
         // Where we're currently writing the thumb to.
+        context.drawImage(profilePic, 0, 0);
         var writeY = 0, writeX = 0;
         //image.onload = function() {
             var tempCanvas = document.createElement("canvas");
@@ -73,8 +74,8 @@
 
             $(".contentslider").height(height);
 
-            tempCanvas.height = height;
-            tempCanvas.width = width;
+            $("#newPicture").height(height);
+            $("#newPicture").width(width);
             var tempContext = tempCanvas.getContext("2d");
             tempContext.drawImage(profilePic, 0, 0, width, height);
 

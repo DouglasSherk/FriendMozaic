@@ -6,9 +6,10 @@
     var uids;
     var imgData = new Array();
     var originalData = new Array();
-    var context = document.getElementById("newPicture").getContext("2d");
 
     function processFriends(callback) {
+        var context = document.getElementById("newPicture").getContext("2d");
+
         var tempCanvas = document.createElement("canvas");
         var tempContext = tempCanvas.getContext("2d");
         var count = uids.length, num = 0;

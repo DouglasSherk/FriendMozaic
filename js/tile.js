@@ -2,7 +2,8 @@ $(document).ready(function() {
     var tileX = 10;
     var tileY = 10;
 
-    var uids = ["100003343000188", "510139148", "715822810", "504072909", "1649640112"];
+    //var uids = ["100003343000188", "510139148", "715822810", "504072909", "1649640112"];
+    var uids;
     var imgData = new Array();
     var originalData = new Array();
     var context = document.getElementById("newPicture").getContext("2d");
@@ -110,9 +111,11 @@ $(document).ready(function() {
         };
     }
 
-    processFriends(function() {
+    /*processFriends(function() {
         //tile("512769141");
-        //tile("douglas.sherk");
-        tile("1658071309");
-    });
+        tile("douglas.sherk");
+        //tile("1658071309");
+        //tile("FrozenFires");
+        //tile("hassaan.aamir");
+    });*/
 });

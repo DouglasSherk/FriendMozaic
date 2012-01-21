@@ -125,7 +125,6 @@
         if(inuse===false) {
           inuse=true;
           moveSlider('left', rightBtn);
-          
         }
         return false; // Keep the link from firing
       });

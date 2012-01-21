@@ -78,11 +78,12 @@
 
                     for (var i = 0; i < friendIds.length; i++){
                         friendURL[i] = "https://graph.facebook.com/" + friendIds[i] + "/picture";
+                        window.console && console.log(friendURL[i]);
                     } 
 
                     window.console && console.log("in showfriends3!"); 
 
-                    $("#selected-friends").html(friendURL().join(','));
+                    $("#selected-friends").html(friendIds().join(','));
 
                     window.console && console.log("in showfriends4!"); 
                 });                  

@@ -120,6 +120,7 @@
         if(inuse===false) {
           inuse=true;
           moveSlider('left', rightBtn);
+          updatePicture();
         }
         return false; // Keep the link from firing
       });

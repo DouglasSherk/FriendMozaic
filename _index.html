@@ -16,7 +16,7 @@
         <script>
           window.fbAsyncInit = function() {
             tmp();
-            // Additional initialization code here
+            // fix this later...
           };
 
           // Load the SDK Asynchronously
@@ -69,6 +69,29 @@
 
               });
             }}
+            
+            function getFriendList() {
+                var profileURLs = new Array();
+                var friendSelector  = $("#jfmfs-container").data('jfmfs');
+                var selectedFriends = friendSelector.getSelectedIds();
+                
+                FB.api('/me/albums', function (response) {
+                    for (album in response.data) {
+
+                        // Find the Profile Picture album
+                        if (response.data[album].name == "Profile Pictures") {
+
+                        // Get a list of all photos in that album.
+                        FB.api(response.data[album].id + "/photos", function(response) {
+
+                        //The image link
+                        image = response.data[0].images[0].source;
+                    });
+                }
+            }
+});
+                
+            }
         </script>
         
         <div class="center">
@@ -81,12 +104,16 @@
                 <div class="cs_slider">
                     <div class="cs_article">
                         <h2><a href="#">Friend Selector</a></h2>
-                        <div id="jfmfs-container" class="friendCanvas"></div>
+                        <div id="jfmfs-container"></div>
                     </div>
                     <div class="cs_article">
                         <h2><a href="#">Test Page</a></h2>
+<<<<<<< HEAD
+                        <div id="photo-container" class="photoCanvas"></div>
+=======
                         <canvas id="newPicture" height="300px" width="300px"></canvas>
                         <div class="photoCanvas"></div>
+>>>>>>> 45442ca0d651b5dda093c66c6576f366706af7e0
                     </div>
                 </div>
             </div>

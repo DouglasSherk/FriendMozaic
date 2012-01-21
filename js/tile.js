@@ -72,8 +72,6 @@
             }
 
             $(".contentslider").height(height + 50);
-            $("#newPicture").height(height);
-            $("#newPicture").width(width);
 
             tempCanvas.height = height;
             tempCanvas.width = width;

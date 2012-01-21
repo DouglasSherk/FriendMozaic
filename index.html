@@ -43,10 +43,8 @@
             }
          
             function init() {
-                alert('hi');    
               FB.api('/me', function(response) {
                   $("#username").html("<img src='https://graph.facebook.com/" + response.id + "/picture'/><div>" + response.name + "</div>");
-
                 
                   $("#jfmfs-container").jfmfs({ 
                       max_selected:999, 
@@ -82,7 +80,7 @@
                 <div class="cs_slider">
                     <div class="cs_article">
                         <h2><a href="#">Friend Selector</a></h2>
-                        <div class="friendCanvas"></div>
+                        <div class="jfmfs-container"></div>
                     </div>
                     <div class="cs_article">
                         <h2><a href="#">Test Page</a></h2>

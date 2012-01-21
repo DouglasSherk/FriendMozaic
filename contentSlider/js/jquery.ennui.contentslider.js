@@ -1,4 +1,5 @@
 (function($) {
+  
   $.fn.ContentSlider = function(options)
   {
     var defaults = {
@@ -19,6 +20,7 @@
     var x = -1*w*n+w; // Minimum left value
     var p = parseInt(o.width)/parseInt(defaultWidth);
     var thisInstance = this.attr('id');
+    
     var inuse = false; // Prevents colliding animations
 
     function moveSlider(d, b)
@@ -72,8 +74,8 @@
           height:o.height
         })
         // Add the buttons to move left and right
-        .prepend('<a href="#" class="cs_leftBtn"><img src="'+o.leftBtn+'" /></a>')
-        .append('<a href="#" class="cs_rightBtn"><img src="'+o.rightBtn+'" /></a>')
+        //.prepend('<a id="leftBtn" href="#" class="cs_leftBtn"><img src="'+o.leftBtn+'" /></a>')
+        //.append('<a id="rightBtn" href="#" class="cs_rightBtn"><img src="'+o.rightBtn+'" /></a>')
         // Dig down to the article div elements
         .find('.cs_article')
           // Set the width and height of the div to the defined size
@@ -89,8 +91,7 @@
           .end()
         .find('.cs_rightBtn')
           .hide()
-          .animate({ 'width':'show' })
-          .parent.click(function() { alert('hi')});
+          .animate({ 'width':'show' });
      
       // Resize the font to match the bounding box
       if(o.textResize===true) {
@@ -112,7 +113,8 @@
       leftBtn.bind('click', function() {
         if(inuse===false) {
           inuse = true;
-          moveSlider('right', leftBtn);
+          //moveSlider('right', leftBtn);
+          
         }
         return false; // Keep the link from firing
       });
@@ -122,7 +124,8 @@
       rightBtn.bind('click', function() {
         if(inuse===false) {
           inuse=true;
-          moveSlider('left', rightBtn);
+          //moveSlider('left', rightBtn);
+          
         }
         return false; // Keep the link from firing
       });

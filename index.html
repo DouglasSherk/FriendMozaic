@@ -7,6 +7,7 @@
         
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
         <script type="text/javascript" src="fbMultiSelector/jquery.facebook.multifriend.select.js"></script>
+        <script type="text/javascript" src="js/jquery.ennui.contentslider.js"></script>
     </head>
     
     <body>
@@ -14,6 +15,7 @@
         <script>
           window.fbAsyncInit = function() {
             tmp();
+            $("#rightBtn").click(function(){updatePicture()});
             // Additional initialization code here
           };
 
@@ -91,8 +93,8 @@
         </div>
     </body>
     <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-    <script type="text/javascript" src="js/jquery.ennui.contentslider.js"></script>
     <script type="text/javascript" src="js/tile.js"></script>
+    
     <script type="text/javascript">
             $(function() {
                 $('#slider').ContentSlider({

@@ -63,12 +63,22 @@
                 }              
  
                 
+                var friendURL = new Array();   
  
                 $("#show-friends").live("click", function() {
                     var friendSelector = $("#jfmfs-container").data('jfmfs');             
-                    $("#selected-friends").html(friendSelector.getSelectedIds().join(', ')); 
+
+                    var friendIds = friendSelector.getSelectedIds();
+
+                    for (var i = 0; i < friendIds.size(); i++){
+                        friendURL[i] = "https://graph.facebook.com/" + friendIds[i] + "/picture";
+                    } 
+
+                    $("#selected-friends").html(friendURL().join(', ')); 
                 });                  
- 
+
+
+
  
               </script> 
               

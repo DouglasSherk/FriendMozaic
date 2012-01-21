@@ -33,7 +33,7 @@
             function tmp(){
             FB.init({appId: '158930817550508'});
             
-            window.login= function () {
+            window.login = function () {
                 FB.login(function(response) {
                     if (response.authResponse) {
                         init(); 
@@ -48,13 +48,9 @@
                   $("#username").html("<img src='https://graph.facebook.com/" + response.id + "/picture'/><div>" + response.name + "</div>");
                 
                   $("#jfmfs-container").jfmfs({ 
-<<<<<<< HEAD
                       max_selected: 99, 
                       max_selected:500, 
-
-=======
                       max_selected:500, 
->>>>>>> aa1b3c4092ea6548fc8370542832bccd7101f4f6
                       max_selected_message: "{0} of {1} selected",
                       friend_fields: "id,name,last_name",
                       sorter: function(a, b) {
@@ -90,7 +86,7 @@
                         <div id="jfmfs-container" class="friendCanvas"></div>
                     </div>
                     <div class="cs_article">
-                        <h2><a href="#">Test Page</a></h2>
+                        <h2><a href="#">Photo Collage</a></h2>
                         <canvas id="newPicture" height="1000px" width="1000px"></canvas>
                         <div class="photoCanvas"></div>
                     </div>

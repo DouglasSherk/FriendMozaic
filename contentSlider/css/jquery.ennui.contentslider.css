@@ -10,7 +10,7 @@
 }
 .cs_leftBtn, .cs_rightBtn {
   width:30px; /* Should be as wide as the button graphic being used */
-  background:#333; /* This will probably match the contentslider bg color */
+  /*background:#333; /* This will probably match the contentslider bg color */
 }
 
 /*

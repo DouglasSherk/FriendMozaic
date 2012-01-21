@@ -6,7 +6,7 @@
         <link href='http://fonts.googleapis.com/css?family=Port+Lligat+Sans' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
         <script type="text/javascript" src="fbMultiSelector/jquery.facebook.multifriend.select.js"></script>
-        <script type="text/javascript" src="//connect.facebook.net/en_US/all.js"></script>
+        <script src="http://connect.facebook.net/en_US/all.js"></script>
     </head>
     
     <body>
@@ -51,31 +51,6 @@
 
               });
             }
-            
-            var friendURL = new Array();   
-
-            $("#show-friends").live("click", function() {
-
-                window.console && console.log("in showfriends!"); 
-                
-                var friendIds = new Array();
-                var friendSelector = $("#jfmfs-container").data('jfmfs');             
-
-                friendIds = friendSelector.getSelectedIds();
-
-                window.console && console.log("in showfriends!"); 
-
-                for (var i = 0; i < friendIds.length; i++){
-                    friendURL[i] = "https://graph.facebook.com/" + friendIds[i] + "/picture";
-                    window.console && console.log(friendURL[i]);
-                } 
-
-                window.console && console.log("in showfriends3!"); 
-
-                $("#selected-friends").html(friendIds().join(','));
-
-                window.console && console.log("in showfriends4!"); 
-            });
         </script>
         
         

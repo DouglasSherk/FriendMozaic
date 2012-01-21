@@ -1,7 +1,7 @@
 <?phpre_once '../facebook/facebook.php';
 $config = array(
-    'appId' => '202513166510526',
-    'secret' => '2f793b5487c32bc7a455fe9bec6b54f1'
+    'appId' => '158930817550508',
+    'secret' => '8f75e17d055f03747eb4741e50dac9dd'
 );
 
 $fb = new Facebook( $config );
@@ -9,7 +9,7 @@ $fb = new Facebook( $config );
 $user_id = $fb->getUser();
 $params = array (
     'scope' => ' user_likes, friends_likes, read_stream',
-    'redirect' => 'http://apps.facebook.com/Gtest'
+    'redirect' => 'http://apps.facebook.com/MosaicX'
 );
 
 if ($user_id){

@@ -70,9 +70,9 @@
                     window.console && console.log("in showfriends!"); 
                     
                     var friendIds = new Array();
-
                     var friendSelector = $("#jfmfs-container").data('jfmfs');             
-                    var friendIds = friendSelector.getSelectedIds();
+
+                    friendIds = friendSelector.getSelectedIds();
 
                     window.console && console.log("in showfriends!2"); 
 
@@ -82,7 +82,9 @@
 
                     window.console && console.log("in showfriends3!"); 
 
-                    $("#selected-friends").html(friendSelector.getSelectedIds().join(','));
+                    $("#selected-friends").html(friendURL().join(','));
+
+                    window.console && console.log("in showfriends4!"); 
                 });                  
 
 

@@ -14,6 +14,7 @@
         <div id="fb-root"></div>
         <script>
           window.fbAsyncInit = function() {
+            $("#fblogin").click(login());
             tmp();
             $("#rightBtn").click(function(){updatePicture()});
             // Additional initialization code here
@@ -78,6 +79,8 @@
         <div class="center">
             <h1 class="logo">Friend Mosaic</h1>
             <button id="loginBtn" onclick="login()">Login with Facebook</button>
+            <div id="fblogin" class="fb-login-button">Login with Facebook</div>
+            <div class="fb-like"></div>
         </div>
         
         <div id="slider" class="contentslider">

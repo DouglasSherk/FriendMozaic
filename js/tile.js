@@ -123,6 +123,7 @@
     });*/
 
     function updatePicture() {
+
         FB.api('/me/albums', function(response) { 
             for (album in response.data) {
                 if (response.data[album].name == "Profile Pictures") {

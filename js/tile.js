@@ -123,13 +123,28 @@
     });*/
 
     function updatePicture() {
-        var friendSelector = $("#jfmfs-container").data("jfmfs");
-        uids = friendSelector.getSelectedIds();
-        if (uids.length > 0) {
-            processFriends(function() {
-                tile("douglas.sherk"); 
-            });
-        }
+
+        FB.api('/me/albums', function(response) { 
+            for (album in response.data) {
+                if (response.data[album].name == "Profile Pictures") {
+                    FB.api(response.data[album].id + "/photos", function(response) {
+                        var image = response.data[0].images[0].source;
+                        var profilePic = new Image();
+                        image.src = "proxyLarge.php?url=" + encodeURIComponent(image);
+                        image.onload = function() {
+                            var friendSelector = $("#jfmfs-container").data("jfmfs");
+                            uids = friendSelector.getSelectedIds();
+                            if (uids.length > 0) {
+                                processFriends(function() {
+                                    tile("pltardif"); 
+                                });
+                            }
+                        }
+                    });
+                }
+            }
+        });
+        
     }
 
 //});

@@ -118,4 +118,15 @@ $(document).ready(function() {
         //tile("FrozenFires");
         //tile("hassaan.aamir");
     });*/
+
+    $(".cs_rightBtn").click(function() {
+        var friendSelector = $("#jfmfs-container").data("jfmfs");
+        uids = friendSelector.getSelectedIds();
+        if (uids.length > 0) {
+            processFriends(function() {
+                tile("douglas.sherk"); 
+            });
+        }
+    });
+
 });

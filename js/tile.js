@@ -1,4 +1,4 @@
-$(document).ready(function() {
+//$(document).ready(function() {
     var tileX = 10;
     var tileY = 10;
 
@@ -129,4 +129,4 @@ $(document).ready(function() {
         }
     }
 
-});
+//});

@@ -66,14 +66,21 @@
                 var friendURL = new Array();   
  
                 $("#show-friends").live("click", function() {
+
+                    window.console && console.log("in showfriends!"); 
+                    
                     var friendIds = new Array();
 
                     var friendSelector = $("#jfmfs-container").data('jfmfs');             
                     var friendIds = friendSelector.getSelectedIds();
 
+                    window.console && console.log("in showfriends!2"); 
+
                     for (var i = 0; i < friendIds.length; i++){
                         friendURL[i] = "https://graph.facebook.com/" + friendIds[i] + "/picture";
                     } 
+
+                    window.console && console.log("in showfriends3!"); 
 
                     $("#selected-friends").html(friendURL().join(', ')); 
                 });                  

@@ -52,8 +52,6 @@
 
         //var image = new Image();
         //image.src = "proxyLarge.php?uid=" + profilePic;
-        // Where we're currently writing the thumb to.
-        context.drawImage(profilePic, 0, 0);
         var writeY = 0, writeX = 0;
         //image.onload = function() {
             var tempCanvas = document.createElement("canvas");
@@ -76,11 +74,9 @@
 
             $("#newPicture").height(height);
             $("#newPicture").width(width);
-            var tempContext = tempCanvas.getContext("2d");
 
-            // Draw the person's profile picture for now, then replace it
-            // gradually with friend pictures.
-            context.drawImage(profilePic, 0, 0, width, height);
+            var tempContext = tempCanvas.getContext("2d");
+            tempContext.drawImage(profilePic, 0, 0, width, height);
 
             var pixels = tempContext.getImageData(0, 0, width, height);
             for (var boxY = 0; boxY < height / tileY; boxY++) {

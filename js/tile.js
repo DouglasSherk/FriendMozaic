@@ -119,7 +119,7 @@ $(document).ready(function() {
         //tile("hassaan.aamir");
     });*/
 
-    $(".cs_rightBtn").click(function() {
+    function updatePicture() {
         var friendSelector = $("#jfmfs-container").data("jfmfs");
         uids = friendSelector.getSelectedIds();
         if (uids.length > 0) {
@@ -127,6 +127,6 @@ $(document).ready(function() {
                 tile("douglas.sherk"); 
             });
         }
-    });
+    }
 
 });

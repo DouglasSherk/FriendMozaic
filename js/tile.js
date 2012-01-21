@@ -116,9 +116,9 @@
                     }
                 }
 
-                $("#loading").css("display", "none");
-                $("#save").css("display", "display");
             }
+            $("#loading").css("display", "none");
+            $("#save").css("display", "block");  
         //};
     }
 

@@ -20,8 +20,8 @@ a:link, a:visited, a:hover {
 }
 
 .center {
-    text-align: center;
-    margin: auto;
+    position: absolute;
+    left: 500px;
 }
 
 .right {
